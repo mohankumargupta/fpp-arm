@@ -24,7 +24,7 @@ jobs:
         shell: bash
         run: |
           sudo apt install -y jq
-          curl -L "https://hub.docker.com/v2/repositories/mohankumargupta/fpp/tags/ | jq '.results | .[] | .name' -r | sed 's/latest//' | sort --version-sort | tail -n 1
+          curl -L "https://hub.docker.com/v2/repositories/mohankumargupta/fpp/tags" | jq '.results | .[] | .name' -r | sed 's/latest//' | sort --version-sort | tail -n 1
           sudo docker registry inspect 
     
     
