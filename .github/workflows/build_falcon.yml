@@ -17,5 +17,13 @@ jobs:
         shell: bash
         run: |
           echo $LATEST_RELEASE
+  dockerhub:
+    runs-on: ubuntu-latest
+    steps:
+      - name: find if latest release exists on Docker Hub
+        shell: bash
+        run: |
+          apt install -y docker-ce-cli
+          docker inspect mohankumargupta/fpp
     
     
