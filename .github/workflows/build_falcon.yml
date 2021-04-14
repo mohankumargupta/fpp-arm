@@ -23,6 +23,7 @@ jobs:
       - name: find if latest release exists on Docker Hub
         shell: bash
         run: |
-          sudo docker inspect mohankumargupta/fpp
+          sudo docker version
+          sudo docker registry inspect mohankumargupta/fpp
     
     
