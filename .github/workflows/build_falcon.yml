@@ -23,7 +23,7 @@ jobs:
       - name: find if latest release exists on Docker Hub
         shell: bash
         run: |
-          apt install -y docker-ce-cli
-          docker inspect mohankumargupta/fpp
+          sudo apt install -y docker-ce-cli
+          sudo docker inspect mohankumargupta/fpp
     
     
