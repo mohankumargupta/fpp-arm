@@ -23,7 +23,8 @@ jobs:
       - name: find if latest release exists on Docker Hub
         shell: bash
         run: |
-          sudo docker version
-          sudo docker registry inspect mohankumargupta/fpp
+          sudo apt install -y jq
+          curl -L "https://hub.docker.com/v2/repositories/mohankumargupta/fpp/tags/ | jq '.results | .[] | .name' -r | sed 's/latest//' | sort --version-sort | tail -n 1
+          sudo docker registry inspect 
     
     
