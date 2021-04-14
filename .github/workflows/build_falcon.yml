@@ -13,8 +13,9 @@ jobs:
         run: |
           LATEST_RELEASE=$(curl -s https://api.github.com/repos/FalconChristmas/fpp/releases/latest | sed -n 's/.*tag_name":\s"\(.*\)".*/\1/p' | head -1)
           echo "LATEST_RELEASE=$LATEST_RELEASE" >> $GITHUB_ENV
-       - name: latest release
-         run: |
-           echo $LATEST_RELEASE
+      - name: latest release
+        shell: bash
+        run: |
+          echo $LATEST_RELEASE
     
     
